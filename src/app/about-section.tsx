@@ -2,7 +2,6 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import { FC } from "react";
 
-
 type AboutProps = {
     isMobile: boolean;
 }
@@ -13,26 +12,37 @@ const AboutSection: FC<AboutProps> = (props) => {
             <Box
                 bgcolor="secondary.main"
                 color="primary.contrastText"
-                py={5}
-                style={{ backgroundImage: 'url(/path/to/your/background-image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+                py={8}
+                style={{ 
+                    backgroundImage: 'url(/path/to/your/background-image.jpg)', 
+                    backgroundSize: 'cover', 
+                    backgroundPosition: 'center' 
+                }}
             >
                 <Container>
-                    <Typography variant={props.isMobile ? 'h5' : 'h3'} textAlign="center" fontWeight="bold" gutterBottom>
+                    <Typography 
+                        variant={props.isMobile ? 'h5' : 'h3'} 
+                        textAlign="center" 
+                        fontWeight="700" 
+                        gutterBottom
+                        style={{ fontFamily: "'Roboto', sans-serif", color: "#fff" }}
+                    >
                         Transforme seu negócio com a blockchain
                     </Typography>
-                    <Typography variant="body1" textAlign="center">
-                    Na Elysian, acreditamos que a tecnologia blockchain pode
-                    revolucionar a maneira como as empresas operam, trazendo
-                    transparência, segurança e eficiência sem precedentes. Somos uma
-                    startup inovadora focada em desenvolver contratos inteligentes,
-                    integrar sistemas e oferecer suporte de qualidade para garantir que
-                    sua transição para a nova era digital seja suave e bem-sucedida.
+                    <Typography 
+                        variant="body1" 
+                        textAlign="center" 
+                        paragraph 
+                        style={{ fontFamily: "'Open Sans', sans-serif", lineHeight: 1.6 }}
+                    >
+                        Na Elysian, acreditamos que a tecnologia blockchain pode
+                        revolucionar a maneira como as empresas operam, trazendo
+                        transparência, segurança e eficiência sem precedentes. Somos uma
+                        startup inovadora focada em desenvolver contratos inteligentes,
+                        integrar sistemas e oferecer suporte de qualidade para garantir que
+                        sua transição para a nova era digital seja suave e bem-sucedida.
                     </Typography>
                 </Container>
-            </Box>
-
-            {/* Seção de Vantagens */}
-            <Box py={5}>
                 <Container>
                     <Grid container spacing={4} justifyContent="center">
                         <Grid item xs={12} sm={6} md={4}>
@@ -84,10 +94,47 @@ const AboutSection: FC<AboutProps> = (props) => {
                 </Container>
             </Box>
 
-            {/* Chamada para Ação */}
-            <Box bgcolor="secondary.main" color="primary.contrastText" py={5}>
+            {/* Seção Quem Somos Nós */}
+            <Box py={5}>
                 <Container>
-                    <Typography variant={props.isMobile ? 'h5' : 'h4'} textAlign="center" gutterBottom>
+                    <Typography variant={props.isMobile ? 'h5' : 'h3'} textAlign="center" fontWeight="bold" gutterBottom>
+                        Sobre a gente
+                    </Typography>
+                    <Grid container spacing={4} justifyContent="center">
+                        <Grid item xs={12} sm={6} md={6}>
+                            <Box display="flex" flexDirection="column" alignItems="center" mb={2}>
+                                <a href="https://www.linkedin.com/in/williamciva" target="_blank" rel="noopener noreferrer">
+                                    <Image src="/wyl.png" alt="Fundador 1" width={200} height={200} />
+                                </a>
+                                <Typography variant="h6" textAlign="center" fontWeight="bold" gutterBottom>
+                                    William Civa
+                                </Typography>
+                                <Typography variant="body2" textAlign="justify">
+                                Analista de banco de dados com experiência em tecnologias como React.js e CSS3, e um sólido histórico em banco de dados SQL e PL/SQL. Desde setembro de 2022, atua como analista de banco de dados, trazendo uma abordagem analítica e técnica para a otimização de dados e desenvolvimento de soluções robustas. Anteriormente, trabalhou como assistente de TI, onde desenvolveu habilidades práticas em gestão de banco de dados e suporte técnico. William é também um entusiasta de blockchain, acreditando na sua capacidade de transformar a maneira como as empresas gerenciam e protegem dados, e está comprometido em explorar e implementar inovações tecnológicas que promovam segurança e eficiência.
+                                </Typography>
+                            </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={6} md={6}>
+                            <Box display="flex" flexDirection="column" alignItems="center" mb={2}>
+                                <a href="https://www.linkedin.com/in/andriano-toazza" target="_blank" rel="noopener noreferrer">
+                                    <Image src="/andy.jpg" alt="Fundador 2" width={200} height={200} />
+                                </a>
+                                <Typography variant="h6" textAlign="center" fontWeight="bold" gutterBottom>
+                                    Andriano Toazza
+                                </Typography>
+                                <Typography variant="body2" textAlign="justify">
+                                Entusiasta de blockchain e criptografia. Possui mais de três anos de experiência em Quality Assurance de software, com especialização em automação de testes para aplicações Web e APIs. Tem experiência significativa no desenvolvimento e manutenção de testes automatizados, garantindo cobertura eficiente e robusta. Além disso, possui habilidades em testes manuais e gestão de testes exploratórios, atuando com competência em ambientes ágeis e sempre buscando a excelência e inovação nos processos.
+                                </Typography>
+                            </Box>
+                        </Grid>
+                    </Grid>
+                </Container>
+            </Box>
+
+            {/* Chamada para Ação */}
+            <Box bgcolor="secondary.main" color="primary.contrastText" py={8}>
+                <Container>
+                    <Typography variant={props.isMobile ? 'h5' : 'h4'} textAlign="center" fontWeight="bold" gutterBottom>
                         Pronto para revolucionar seu negócio?
                     </Typography>
                     <Typography variant="h6" textAlign="center">
@@ -98,6 +145,5 @@ const AboutSection: FC<AboutProps> = (props) => {
         </section>
     )
 }
-
 
 export default AboutSection;
