@@ -130,18 +130,6 @@ const AboutSection: FC<AboutProps> = (props) => {
                     </Grid>
                 </Container>
             </Box>
-
-            {/* Chamada para Ação */}
-            <Box bgcolor="secondary.main" color="primary.contrastText" py={8}>
-                <Container>
-                    <Typography variant={props.isMobile ? 'h5' : 'h4'} textAlign="center" fontWeight="bold" gutterBottom>
-                        Pronto para revolucionar seu negócio?
-                    </Typography>
-                    <Typography variant="h6" textAlign="center">
-                        Entre em contato conosco hoje mesmo e dê o primeiro passo para o futuro!
-                    </Typography>
-                </Container>
-            </Box>
         </section>
     )
 }
