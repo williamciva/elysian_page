@@ -11,12 +11,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import getDashboardTheme from '@/components/dashboard/theme/getDashboardTheme';
-import SideMenu from '@/components/dashboard/components/SideMenu';
-import AppNavbar from '@/components/dashboard/components/AppNavbar';
-import Header from '@/components/dashboard/components/Header';
+import SideMenu, { TypeListItems } from '@/components/dashboard/SideMenu';
+import AppNavbar from '@/components/dashboard/AppNavbar';
+import Header from '@/components/dashboard/Header';
 
 export default function DashboardTemplate() {
-  const [view, setView] = React.useState<React.JSX.Element | null>();
+  const [view, setView] = React.useState<TypeListItems>();
 
   const [mode, setMode] = React.useState<PaletteMode>('light');
   const [showCustomTheme, setShowCustomTheme] = React.useState(true);
@@ -59,7 +59,7 @@ export default function DashboardTemplate() {
               }}
             >
               <Header />
-              {view} {/* Renderiza o conteúdo passado como children */}
+              {view != undefined ? view.element : null} {/* Renderiza o conteúdo passado como children */}
             </Stack>
           </Box>
         </Box>
